@@ -4,6 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/Pick-up-Plants/',
   plugins: [
     react(),
     VitePWA({
@@ -12,18 +13,31 @@ export default defineConfig({
       manifest: {
         name: 'Pick up Plants',
         short_name: 'Pick up Plants',
-        description: 'Discover delicious plant-based recipes for a healthier lifestyle',
+        description: 'Discover and share plant-based recipes',
         theme_color: '#2D4D39',
+        background_color: '#F6F4E8',
         icons: [
           {
-            src: 'logo192.png',
+            src: 'pwa-64x64.png',
+            sizes: '64x64',
+            type: 'image/png'
+          },
+          {
+            src: 'pwa-192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'logo512.png',
+            src: 'pwa-512x512.png',
             sizes: '512x512',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any'  
+          },
+          {
+            src: 'maskable-icon-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable'
           }
         ]
       },
